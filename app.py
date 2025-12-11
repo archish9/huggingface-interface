@@ -39,7 +39,7 @@ def load_model():
     global llm
     try:
         if llm is None:
-            repo_id = "ArchishSkyllect/gemma-2-9b-it-gguf"
+            repo_id = "archish9/gemma-2-9b-it-gguf"
             filename = "gemma-2-9b-it-Q4_K_M.gguf"
 
             logger.info("📥 Downloading model from Hugging Face Hub...")
@@ -97,3 +97,4 @@ async def generate(request: PromptRequest):
     except Exception as e:
         logger.error("❌ Error in /generate endpoint", exc_info=True)
         raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
+
